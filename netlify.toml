@@ -1,7 +1,7 @@
 [build]
-  command = "php artisan export"
-  publish = "export"
-  
+  command = "npm run build"
+  publish = "build"
+
 [build.environment]
   PHP_VERSION = "8.1"
 
