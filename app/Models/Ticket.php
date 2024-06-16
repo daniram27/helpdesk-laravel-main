@@ -72,8 +72,14 @@ class Ticket extends Model
         });
     }
 
-    // Accessor to get the owner's name
-
+    // diffForHumans: A Laravel method that calculates the difference between two dates and returns it in a human-readable format.
+    public function getTotalExecutionTimeAttribute()
+    {
+        if ($this->updated_at && $this->created_at) {
+            return $this->created_at->diffForHumans($this->updated_at, true);
+        }
+        return null;
+    }
     // Relationships
     public function priority()
     {

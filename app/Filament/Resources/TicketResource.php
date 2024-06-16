@@ -64,16 +64,16 @@ class TicketResource extends Resource
 
                 Card::make()->schema([
                     Forms\Components\Select::make('ticket_statuses_id')
-                    ->label(__('Status'))
-                    ->options(TicketStatus::all()->pluck('name', 'id'))
-                    ->searchable()
-                    ->required()
-                    ->default(fn() => TicketStatus::where('name', 'Open')->first()->id)
-                    ->hiddenOn('create')
-                    ->hidden(fn() => !auth()->user()->hasAnyRole(['Super Admin', 'Admin Unit', 'Staff Unit']))
-                    ->disabled(fn ($record) => $record !== null && $record->ticket_statuses_id == TicketStatus::where('name', 'Closed')->first()->id), // Disable if the record is not null and status is "Closed"
-            ]),
-        ]);
+                        ->label(__('Status'))
+                        ->options(TicketStatus::all()->pluck('name', 'id'))
+                        ->searchable()
+                        ->required()
+                        ->default(fn() => TicketStatus::where('name', 'Open')->first()->id)
+                        ->hiddenOn('create')
+                        ->hidden(fn() => !auth()->user()->hasAnyRole(['Super Admin', 'Admin Unit', 'Staff Unit']))
+                        ->disabled(fn($record) => $record !== null && $record->ticket_statuses_id == TicketStatus::where('name', 'Closed')->first()->id), // Disable if the record is not null and status is "Closed"
+                ]),
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -91,6 +91,15 @@ class TicketResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->translateLabel()
+                    ->sortable()
+                    ->toggleable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('Updated At'))
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(),
+                Tables\Columns\TextColumn::make('total_execution_time')
+                    ->label(__('Execution Time'))
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('ticketStatus.name')
@@ -145,7 +154,13 @@ class TicketResource extends Resource
                     $query->where('tickets.owner_id', auth()->id());
                 }
             })
-            ;
+        ;
+    }
+    public static function countOpenTickets(): int
+    {
+        return Ticket::whereHas('ticketStatus', function ($query) {
+            $query->where('name', 'Open');
+        })->count();
     }
 
     public static function getPluralModelLabel(): string
