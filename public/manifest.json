@@ -1,14 +1,14 @@
 {
-    "name": "Laravel Package Tutorial",
-    "short_name": "LPT",
+    "name": "ETSA - E Ticketing Sampoerna Academy",
+    "short_name": "ETSA",
     "start_url": "/index.php",
     "background_color": "#6777ef",
-    "description": "Tutorial of Laravel Package",
-    "display": "fullscreen",
+    "description": "E Ticketing Apps",
+    "display": "standalone",
     "theme_color": "#6777ef",
     "icons": [
         {
-            "src": "logo.png",
+            "src": "pwa-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
