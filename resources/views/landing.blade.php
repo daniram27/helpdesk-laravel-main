@@ -8,6 +8,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <title>{{ config('app.name') }} </title>
+    <script src="{{ asset('js/firebase-config.js') }}"></script>
     <meta name="description" content="{{ env('APP_DESCRIPTION', 'Laravel description') }}">
     @vite(['resources/css/app.css'])
 </head>

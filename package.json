@@ -10,5 +10,8 @@
         "laravel-vite-plugin": "^0.7.5",
         "vite": "^4.0.0",
         "vite-plugin-pwa": "^0.20.0"
+    },
+    "dependencies": {
+        "firebase": "^10.12.2"
     }
 }
