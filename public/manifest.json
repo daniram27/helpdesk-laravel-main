@@ -1,28 +1,17 @@
 {
-    "name": "ETSA",
-    "short_name": "ETSA",
-    "description": "E Ticketing Sampoerna Academy",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#ffffff",
+    "name": "Laravel Package Tutorial",
+    "short_name": "LPT",
+    "start_url": "/index.php",
+    "background_color": "#6777ef",
+    "description": "Tutorial of Laravel Package",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
     "icons": [
-      {
-        "src": "pwa-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "pwa-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-      {
-        "src": "pwa-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any maskable"
-      }
+        {
+            "src": "logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
     ]
-  }
-  
+}

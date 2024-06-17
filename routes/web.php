@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\SocialiteController;
 */
 
 Route::get('/', function () {
-    return redirect('/admin/login');
+    return view('landing');
 });
 
 
