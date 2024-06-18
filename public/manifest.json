@@ -1,17 +1,47 @@
 {
-    "name": "ETSA - E Ticketing Sampoerna Academy",
-    "short_name": "ETSA",
-    "start_url": "/index.php",
-    "background_color": "#6777ef",
-    "description": "E Ticketing Apps",
-    "display": "standalone",
-    "theme_color": "#6777ef",
-    "icons": [
-        {
-            "src": "pwa-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
-        }
-    ]
+  "name": "ETSA - E Ticketing Sampoerna Academy",
+  "short_name": "ETSA",
+  "start_url": "/index.php",
+  "background_color": "#6777ef",
+  "description": "E Ticketing Apps",
+  "display": "standalone",
+  "theme_color": "#6777ef",
+  "icons": [
+    {
+      "src": "pwa-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
